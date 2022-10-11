@@ -39,7 +39,7 @@ const ProgressPage: React.FC = () => {
       <PageTitle>{t('common.progress')}</PageTitle>
       <Col>
         <S.Card title={t('progress.basic')}>
-          <Progress percent={30} strokeColor={theme.colors.main.primary} />
+          <Progress percent={50} strokeColor={theme.colors.main.primary} />
           <Progress percent={50} status="active" strokeColor={theme.colors.main.primary} />
           <Progress percent={70} status="exception" strokeColor={theme.colors.main.error} />
           <Progress percent={100} strokeColor={theme.colors.main.success} />
@@ -87,7 +87,7 @@ const ProgressPage: React.FC = () => {
                 '0%': theme.colors.main.primary,
                 '100%': theme.colors.main.secondary,
               }}
-              percent={90}
+              percent={34}
             />
             <Progress
               type="circle"

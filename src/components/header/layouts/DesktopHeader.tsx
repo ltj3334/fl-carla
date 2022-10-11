@@ -52,9 +52,9 @@ export const DesktopHeader: React.FC<DesktopHeaderProps> = ({ isTwoColumnsLayout
             </Row>
           </Col>
 
-          <Col>
+          {/* <Col>
             <ProfileDropdown />
-          </Col>
+          </Col> */}
         </Row>
       </S.ProfileColumn>
     </Row>

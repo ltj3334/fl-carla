@@ -17,6 +17,14 @@ import { References } from '@app/components/common/References/References';
 import { useResponsive } from '@app/hooks/useResponsive';
 import * as S from './DashboardPage.styles';
 
+import { Card } from '@app/components/common/Card/Card';
+import { LearningMetricForm } from '@app/components/tj/LearningMetricForm/LearningMetricForm';
+import { ServerAccuracy } from '@app/components/tj/ServerAccuracy/ServerAccuracy';
+import { ClientAccuracy } from '@app/components/tj/ClientAccuracy/ClientAccuracy';
+import { MapControlForm } from '@app/components/tj/MapControlForm/MapControlForm';
+import { BasicTable } from '@app/components/tj/BasicTable/BasicTable';
+import { Tables } from '@app/components/tj/ClientDataTables/Tables';
+
 const DashboardPage: React.FC = () => {
   const { isTablet, isDesktop } = useResponsive();
 
@@ -26,16 +34,34 @@ const DashboardPage: React.FC = () => {
     <Row>
       <S.LeftSideCol xl={16} xxl={16}>
         <Row gutter={[30, 30]}>
+          <Col xs={24} sm={24} xl={10}>
+            <Card id="validation form" title={t('Choose Learning Option')} padding="1.25rem">
+              <LearningMetricForm />
+            </Card>
+          </Col>
+
+          <Col xs={24} sm={24} xl={14}>  
+            <Card id="map" title = {t('Map Select & Overview')} padding="1.25rem">
+              <MapControlForm />
+            </Card>
+          </Col>
+          <Col id="server-accuracy" xs={10} xxl={12}>
+            <ServerAccuracy />
+          </Col>
+          <Col id="client-accuracy" xs={10} xxl={12}>
+            <ClientAccuracy />
+          </Col>
+          {/* <Col id="Basic-Table" xs={10} xxl={8}>
+            <Tables />
+          </Col> */}
+          
+    </Row>
+
+
+        {/* <Row gutter={[30, 30]}>
           <Col span={24}>
-            <Row gutter={[30, 30]}>
-              <StatisticsCards />
-            </Row>
           </Col>
-
-          <Col id="map" span={24}>
-            <MapCard />
-          </Col>
-
+          
           <Col id="latest-screenings" span={24}>
             <ScreeningsCard />
           </Col>
@@ -63,15 +89,19 @@ const DashboardPage: React.FC = () => {
           <Col id="news" span={24}>
             <NewsCard />
           </Col>
-        </Row>
+        </Row> */}
         <References />
       </S.LeftSideCol>
 
-      <S.RightSideCol xl={8} xxl={8}>
-        <BloodScreeningCard id="blood-screening" />
+      {/* <S.RightSideCol xl={8} xxl={8}> */}
+        {/* Car mailege*/}          
+        {/* <Col id="car-milege" xs={24} xxl={24}>
+          <CarMileageChart />
+        </Col> */}
+        {/* <BloodScreeningCard id="blood-screening" />
         <S.Space />
-        <PatientResultsCard id="patient-timeline" />
-      </S.RightSideCol>
+        <PatientResultsCard id="patient-timeline" /> */}
+      {/* </S.RightSideCol> */}
     </Row>
   );
 

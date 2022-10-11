@@ -15,7 +15,7 @@ const AdvancedFormsPage: React.FC = () => {
       <PageTitle>{t('common.advancedForms')}</PageTitle>
       <Row gutter={[30, 30]}>
         <Col xs={24} sm={24} xl={10}>
-          <Card id="validation form" title={t('forms.validationForm')} padding="1.25rem">
+          <Card id="validation-form" title={t('forms.validationForm')} padding="1.25rem">
             <ValidationForm />
           </Card>
         </Col>

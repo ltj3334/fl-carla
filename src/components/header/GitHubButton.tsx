@@ -16,7 +16,7 @@ export const GitHubButton: React.FC = (props) => {
       $isDark={theme === 'dark'}
       {...props}
     >
-      GitHub
+      Github : FL-CARLA
     </Button>
   );
 };
