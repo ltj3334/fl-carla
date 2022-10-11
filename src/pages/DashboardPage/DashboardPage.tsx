@@ -21,6 +21,7 @@ import { Card } from '@app/components/common/Card/Card';
 import { LearningMetricForm } from '@app/components/tj/LearningMetricForm/LearningMetricForm';
 import { ServerAccuracy } from '@app/components/tj/ServerAccuracy/ServerAccuracy';
 import { ClientAccuracy } from '@app/components/tj/ClientAccuracy/ClientAccuracy';
+import { ProgressBar } from '@app/components/tj/ProgressBar/ProgressBar';
 import { MapControlForm } from '@app/components/tj/MapControlForm/MapControlForm';
 import { BasicTable } from '@app/components/tj/BasicTable/BasicTable';
 import { Tables } from '@app/components/tj/ClientDataTables/Tables';
@@ -32,15 +33,15 @@ const DashboardPage: React.FC = () => {
 
   const desktopLayout = (
     <Row>
-      <S.LeftSideCol xl={16} xxl={16}>
+      <S.LeftSideCol xl={60} xxl={60}>
         <Row gutter={[30, 30]}>
-          <Col xs={24} sm={24} xl={10}>
+          <Col xs={10} sm={10} xl={10}>
             <Card id="validation form" title={t('Choose Learning Option')} padding="1.25rem">
               <LearningMetricForm />
             </Card>
           </Col>
 
-          <Col xs={24} sm={24} xl={14}>  
+          <Col xs={10} sm={10} xl={14}>  
             <Card id="map" title = {t('Map Select & Overview')} padding="1.25rem">
               <MapControlForm />
             </Card>
@@ -54,60 +55,16 @@ const DashboardPage: React.FC = () => {
           {/* <Col id="Basic-Table" xs={10} xxl={8}>
             <Tables />
           </Col> */}
+          <ProgressBar />
           
-    </Row>
-
-
-        {/* <Row gutter={[30, 30]}>
-          <Col span={24}>
-          </Col>
-          
-          <Col id="latest-screenings" span={24}>
-            <ScreeningsCard />
-          </Col>
-
-          <Col id="treatment-plan" xl={24}>
-            <TreatmentCard />
-          </Col>
-
-          <Col id="covid" xl={24}>
-            <CovidCard />
-          </Col>
-
-          <Col id="activity" xl={24} xxl={12}>
-            <ActivityCard />
-          </Col>
-
-          <Col id="health" xl={24} xxl={12}>
-            <HealthCard />
-          </Col>
-
-          <Col id="favorite-doctors" xl={24}>
-            <FavoritesDoctorsCard />
-          </Col>
-
-          <Col id="news" span={24}>
-            <NewsCard />
-          </Col>
-        </Row> */}
-        <References />
+        </Row>
       </S.LeftSideCol>
-
-      {/* <S.RightSideCol xl={8} xxl={8}> */}
-        {/* Car mailege*/}          
-        {/* <Col id="car-milege" xs={24} xxl={24}>
-          <CarMileageChart />
-        </Col> */}
-        {/* <BloodScreeningCard id="blood-screening" />
-        <S.Space />
-        <PatientResultsCard id="patient-timeline" /> */}
-      {/* </S.RightSideCol> */}
     </Row>
   );
 
   const mobileAndTabletLayout = (
     <Row gutter={[20, 20]}>
-      <StatisticsCards />
+      {/* <StatisticsCards />
 
       {isTablet && (
         <Col id="map" md={24} order={4}>
@@ -149,7 +106,7 @@ const DashboardPage: React.FC = () => {
 
       <Col id="news" xs={24} md={24} order={(isTablet && 14) || 0}>
         <NewsCard />
-      </Col>
+      </Col> */}
     </Row>
   );
 
